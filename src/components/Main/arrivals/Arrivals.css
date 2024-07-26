@@ -1,0 +1,43 @@
+.arrivals {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.arrivals__header {
+    margin-bottom: 100px;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 50px;
+    letter-spacing: 0.06em;
+    color: var(--newColor4);
+}
+
+.arrivals__title {
+    margin-left: 20px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+.arrivals_title span {
+    position: relative;
+}
+.arrivals__title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -20px;
+    right: -20px;
+    background-color: var(--newColor2);
+    opacity: 0.4;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.arrivals__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 30px;
+}

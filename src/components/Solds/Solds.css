@@ -1,0 +1,45 @@
+.solds__content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--newColor2);
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+.solds__img {
+    border-radius: 15px;
+}
+.solds__content-wrapper {
+
+}
+.solds__text {
+    text-align: center;
+    margin: 15px;
+    background-color: var(--newColor2);
+    border-radius: 0 15px 15px 0;
+    color: var(--newColor1);
+}
+.solds__textEnd {
+    text-align: center;
+    color: var(--newColor4);
+    font-size: 20px;
+
+}
+.countdown__timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--newColor4);
+}
+
+.timer {
+    margin-right: 20px;
+    color: var(--newColor4);
+    font-size: 25px;
+}
+.timerBet {
+    margin-right: 18px;
+    margin-bottom: 8px;
+    font-size: 35px;
+}

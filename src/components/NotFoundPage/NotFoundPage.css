@@ -1,0 +1,11 @@
+.notFp__wrapper {
+    background-color: var(--newColor2);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.notFP__mainPar {
+    text-align: center;
+    font-size: 25px;
+    color: var(--newColor4);
+}

@@ -1,0 +1,102 @@
+.promo {
+    margin-bottom: 33px;
+}
+
+.promo__content {
+    display: flex;
+    column-gap: 110px;
+    padding-top: 68px;
+    padding-left: 120px;
+    border-radius: 20px;
+    background-color: var(--newColor3);
+}
+
+.promo__text {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.promo__title {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 48px;
+    color: var(--textColor);
+    text-transform: uppercase;
+}
+
+.promo__title-line1 {
+    position: relative;
+    display: inline-block;
+}
+.promo__title-line1 span {
+    position: relative;
+    /*z-index: 1;*/
+}
+.promo__title-line1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -20px;
+    right: -20px;
+    background-color: var(--newColor2);
+    opacity: 0.4;
+}
+
+.promo__desc {
+    margin-bottom: 32px;
+    font-weight: 900;
+    font-size: 45px;
+    letter-spacing: 0.1em;
+    color: var(--newColor3);
+    text-transform: uppercase;
+}
+
+.promo__desc-cont {
+    position: relative;
+    display: inline-block;
+}
+.promo__desc-cont span{
+     position: relative;
+}
+
+.promo__desc-cont::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -20px;
+    right: -20px;
+    background-color: var(--textColor);
+}
+
+.promo__btn-wrapper {
+    display: flex;
+    column-gap: 34px;
+    align-items: center;
+}
+.promo__btn-wrapper::before {
+    content: "";
+    display: inline-block;
+    width: 65px;
+    height: 80px;
+    background-image: url("./../../../img/categories/Apple btn.svg");
+}
+
+.promo__btn {
+    padding: 18px 40px;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.5;
+    background: var(--textColor);
+    color: var(--newColor3);
+    text-transform: uppercase;
+
+}

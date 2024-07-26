@@ -1,0 +1,18 @@
+:root {
+    --textColor: #14471E;
+    --newColor1: #68904D;
+    --newColor2: #C8D2D1;
+    --newColor3: #EE9B01;
+    --newColor4: #DA6A00;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--newColor1);
+}
+
+.container {
+    max-width: 1780px;
+    margin: 0 auto;
+    padding: 0 30px;
+}

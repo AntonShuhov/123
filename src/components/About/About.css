@@ -1,0 +1,25 @@
+.about__content {
+    background-color: var(--newColor2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.about__title {
+    color: var(--textColor);
+    font-weight: bold;
+    font-size: 20px;
+    /*margin-bottom: 2px;*/
+}
+.about__content-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--textColor);
+}
+.about__content-text-par {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-indent: 20px;
+}
+.about__content-text-sp {
+    font-weight: bold;
+}

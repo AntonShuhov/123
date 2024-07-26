@@ -1,0 +1,24 @@
+.adminPanel__content {
+    text-align: center;
+}
+
+.adminPanel__title {
+    color: var(--newColor4);
+    font-size: 25px;
+}
+
+.adminPanel__form {
+    background-color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+.adminPanel__form-item {
+    background-color: var(--newColor2);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
