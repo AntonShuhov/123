@@ -2,6 +2,7 @@ import './Header.css';
 import {useContext, useState} from "react";
 import {Context} from "../../../App";
 import {observer} from "mobx-react-lite";
+import { Link } from "react-router-dom";
 
 import logoImg from './../../../img/icons/Logo1.svg';
 import {
@@ -38,17 +39,16 @@ function Header() {
                     </div>
                     <nav className="header__nav">
                         <ul className="header__nav-list">
-                            <li><a href="/" className="header__nav-link">Главная</a></li>
+                            <li><Link to="/" className="header__nav-link" >Главная</Link></li>
                             <li><button className="header__nav-btn-catalog" onClick={() => setCatalogOpen(!catalogOpen)}>Каталог</button></li>
-                            <li><a href="/about" className="header__nav-link">Про нас</a></li>
-                            <li><a href="/solds" className="header__nav-link">Акции</a></li>
-                            <li></li>
+                            <li><Link to="/about" className="header__nav-link">Про нас</Link></li>
+                            <li><Link to="/solds" className="header__nav-link">Акции</Link></li>
                             <li  className={`header__nav-user ${store.isAuth ? "userActive" : ""}`} >
                                 <button onClick={() => {
                                     setUserMenuOpen(!userMenuOpen);
                                 }}> {
-                                    store.isAuth ? <div>
-                                                    <FaUserAstronaut/> <span className="header__nav-userEmail" >{store.isAuth ? `${store.user.email}` : ''}</span>
+                                    localStorage.getItem('user') ? <div>
+                                                    <FaUserAstronaut/> <span className="header__nav-userEmail" >{localStorage.getItem('user') ? `${localStorage.user}` : ''}</span>
                                                    </div> :
                                         <FaArrowRightToBracket/>
                                     }
@@ -99,7 +99,11 @@ function Header() {
             </div>
             <ul className={`header__nav-usermenu ${userMenuOpen ? "active" : ""}`}>
                 {
-                    store.isAuth ? <><li className="header__nav-usermenu-item" onClick={() => store.logout()}>Выйти</li>
+                    localStorage.getItem('user') ? <><li className="header__nav-usermenu-item" onClick={() => {
+                        store.logout();
+                        setUserMenuOpen(false); }}
+
+                    >Выйти</li>
                         <li className="header__nav-usermenu-item">Личный кабинет</li></> : <li>Войдите или зарегистрируйтесь в личном кабинете</li>
                 }
 
@@ -126,11 +130,11 @@ function Header() {
                    >
                        Войти
                    </button>
-                   <button className="modal__login-registration"
-                           // onClick={() => store.registration(email, password).then(() => setModalActive(false))}
-                   >
-                       Регистрация
-                   </button>
+                   {/*<button className="modal__login-registration"*/}
+                   {/*        onClick={() => store.registration(email, password).then(() => setModalActive(false))}*/}
+                   {/*>*/}
+                   {/*    Регистрация*/}
+                   {/*</button>*/}
                 </div>
             </Modal>
         </header>

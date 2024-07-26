@@ -166,5 +166,5 @@
     visibility: visible;
 }
 .header__nav-usermenu-item {
-
+    cursor: pointer;
 }

@@ -4,7 +4,6 @@ export default class Store {
     user = {
         email : '',
         password : '',
-
     };
     isAuth = false;
 
@@ -24,7 +23,8 @@ export default class Store {
     async login(email, password) {
             try {
                 this.setUser(email, password);
-                localStorage.setItem('user', this.user);
+                localStorage.setItem('user', this.user.email);
+                console.log(localStorage.getItem('user'));
                 if (this.user) {
                     this.setAuth(true);
                 } else {
