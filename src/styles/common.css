@@ -1,9 +1,11 @@
 :root {
-    --textColor: #14471E;
+    --textColor: #14471e;
     --newColor1: #68904D;
-    --newColor2: #C8D2D1;
-    --newColor3: #EE9B01;
+    --newColor2: #c8d2d1;
+    --newColor3: #ee9b01;
     --newColor4: #DA6A00;
+    --newColor5: #73b3ac;
+
 }
 
 body {
@@ -15,4 +17,18 @@ body {
     max-width: 1780px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+@font-face {
+     font-family: Twinses Black;
+    src: url("./fonts/Twinses/Twinses-regular.ttf");
+}
+
+@font-face {
+    font-family: MoscowMetro;
+    src: url("./fonts/Moscow Metro/MoscowMetro.otf");
+}
+@font-face {
+    font-family: MoscowMetroColor;
+    src: url("./fonts/Moscow Metro/MoscowMetroColor.otf");
 }

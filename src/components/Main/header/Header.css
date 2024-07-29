@@ -12,6 +12,10 @@
     border-radius: 10px;
 }
 
+.header__logo-link {
+    justify-items: center;
+    align-items: center;
+}
 .header__logo {
     display: flex;
     align-items: center;
@@ -21,12 +25,15 @@
     width: 60px;
 }
 
-.header__logo span {
+.header__logo-text {
+    background: linear-gradient(45deg, var(--textColor) 33%, var(--newColor1) 36%, var(--newColor3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
     font-weight: 900;
     font-size: 30px;
     line-height: 1.5;
     letter-spacing: 0.03em;
-    text-transform: uppercase;
     color: var(--newColor1);
 }
 
@@ -43,16 +50,17 @@
     column-gap: 30px;
 }
 .header__nav-user {
-    /*visibility: hidden;*/
     color: var(--newColor1);
     cursor: pointer;
 }
-/*.header__nav-user.userActive {*/
-/*    visibility: visible;*/
-/*}*/
+
 .header__nav-userEmail {
     color: var(--newColor1);
     font-size: 15px;
+}
+.header__nav-userEmailEnter {
+    transform: rotate(90deg);
+    margin-top: 10px;
 }
 .header__nav-link {
     color: var(--newColor1);
@@ -111,10 +119,26 @@
     line-height: 36px;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    display: block;
+}
+.header__nav-btn.passive {
+    display: none;
 }
 .modal__login-container {
     display: flex;
     flex-direction: column;
+}
+.modal__login-title {
+    color: var(--newColor2);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.modal__login-helpText {
+    color: rgba(115, 179, 172, 0.85);
+    padding: 6px;
+    font-size: 16px;
 }
 .modal__login-login {
     background-color: var(--newColor2);

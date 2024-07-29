@@ -10,17 +10,13 @@ function Promo() {
                 <div className="promo__content">
                     <div className="promo__text">
                         <div className="promo__title">
-                            <span className="promo__title-line1">
-                                <span>Крепкий.</span>
-                            </span> <br/>
-                            Легкий.<br/>
-                            Профессиональный.<br/>
+                            <p className="promo__title-line up">КРЕПКИЙ.</p>
+                            <p className="promo__title-line mid">Легкий.</p>
+                            <p className="promo__title-line down">Профессиональный.</p>
                         </div>
-                        <div className="promo__desc">
-                             <span className="promo__desc-cont">
-                                 <span>Iphone 15 PRO.</span> 
-                             </span>
-                        </div>
+                        <p className="promo__desc">
+                            Iphone 15 PRO.
+                        </p>
                         <div className="promo__btn-wrapper">
                             <a href="#!" className="promo__btn">Купить</a>
                         </div>

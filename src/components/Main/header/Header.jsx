@@ -4,13 +4,13 @@ import {Context} from "../../../App";
 import {observer} from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
-import logoImg from './../../../img/icons/Logo1.svg';
+import logoImg from './../../../img/icons/logo.png';
 import {
         GiPerfumeBottle, GiWashingMachine, GiVibratingSmartphone, GiPriceTag
        } from "react-icons/gi";
 import { MdOutlinePets, MdOutlineSportsTennis } from "react-icons/md";
 import { BsTools } from "react-icons/bs";
-import { FaComputer, FaArrowRightToBracket } from "react-icons/fa6";
+import { FaComputer, FaArrowTurnUp } from "react-icons/fa6";
 import { GrPersonalComputer } from "react-icons/gr";
 import { PiSprayBottleLight } from "react-icons/pi";
 import { FaCocktail, FaUserAstronaut } from "react-icons/fa";
@@ -33,10 +33,10 @@ function Header() {
         <header className="header">
             <div className="container">
                 <div className="header__row">
-                    <div className="header__logo">
+                    <Link to="/" className="header__logo">
                         <img className="header__logo__img" src={logoImg} alt="logoImg"/>
-                        <span>MobileShop</span>
-                    </div>
+                        <span className="header__logo-text">MOBILESHOP</span>
+                    </Link>
                     <nav className="header__nav">
                         <ul className="header__nav-list">
                             <li><Link to="/" className="header__nav-link" >Главная</Link></li>
@@ -50,12 +50,12 @@ function Header() {
                                     localStorage.getItem('user') ? <div>
                                                     <FaUserAstronaut/> <span className="header__nav-userEmail" >{localStorage.getItem('user') ? `${localStorage.user}` : ''}</span>
                                                    </div> :
-                                        <FaArrowRightToBracket/>
+                                        <FaArrowTurnUp className="header__nav-userEmailEnter"/>
                                     }
 
                                 </button>
                             </li>
-                            <li><button className="header__nav-btn" onClick={() => setModalActive(true)}>
+                            <li><button className={`header__nav-btn ${store.isAuth ? "passive" : ""}`} onClick={() => setModalActive(true)}>
                                 Войти
                             </button></li>
                         </ul>
@@ -110,6 +110,8 @@ function Header() {
             </ul>
             <Modal active={modalActive} setActive={setModalActive}>
                 <div className="modal__login-container">
+                   <h4 className="modal__login-title">Введите логин и пароль</h4>
+                   <p className="modal__login-helpText">логин</p>
                    <input
                        className="modal__login-login"
                        onChange={e => setEmail(e.target.value)}
@@ -117,7 +119,8 @@ function Header() {
                        type="text"
                        placeholder="email"
                    />
-                   <input
+                    <p className="modal__login-helpText">пароль</p>
+                    <input
                        className="modal__login-password"
                        onChange={e => setPassword(e.target.value)}
                        value={password}

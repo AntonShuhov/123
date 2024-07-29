@@ -18,8 +18,13 @@
     font-size: 20px;
 }
 .slick-prev {
-    padding-left: 20px;
+    /*margin-left: 20px;*/
+    width: 40px;
+    z-index: 10;
 }
 .slick-next {
     padding-right: 40px;
+}
+.slick-dots {
+    margin-bottom: 10px;
 }

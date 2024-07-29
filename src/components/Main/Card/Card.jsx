@@ -10,10 +10,10 @@ const Card = (props) => {
                 <img className={styles.card__img} src={props.cardImg} alt="cardPic"/>
                 <div className={styles.card__body}>
                     <div className={styles.card__text}>
-                        <div className={styles.card__title}>
+                        <p className={styles.card__title}>
                             {props.title}
-                        </div>
-                        <div className={styles.card__muted}>Купить сейчас!</div>
+                        </p>
+                        <p className={styles.card__muted}>Купить сейчас!</p>
                     </div>
                     <img className={styles.arrowDollar} src={arrowDollar} alt="-->"/>
                 </div>

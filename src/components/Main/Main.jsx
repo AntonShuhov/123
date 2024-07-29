@@ -7,16 +7,13 @@ import Footer from "./Footer/Footer";
 
 function Main() {
     return (
-        <div
-            // className="catalog"
-        >
+        <div>
             <Header/>
             <Promo/>
             <Brands/>
             <Arrivals/>
             <Sales/>
             <Footer/>
-
         </div>
     )
 }

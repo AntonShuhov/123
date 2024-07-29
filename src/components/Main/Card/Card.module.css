@@ -1,5 +1,5 @@
 .card {
-    width: 30%;
+    max-width: 30%;
     margin-bottom: 15px;
     padding: 15px 5px 5px 5px;
     background-color: var(--newColor2);
@@ -48,6 +48,7 @@
 }
 
 .card__body {
+    max-width: 400px;
     display: flex;
     justify-content: space-between;
     column-gap: 10px;

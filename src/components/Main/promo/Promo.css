@@ -15,7 +15,6 @@
     margin-bottom: 40px;
     font-weight: 700;
     font-size: 32px;
-    line-height: 1.25;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -27,53 +26,35 @@
     color: var(--textColor);
     text-transform: uppercase;
 }
+.promo__title-line.up{
+    padding: 9px 25px 9px 25px;
+    max-width: 240px;
+    color: var(--newColor3);
+    border-radius: 5px;
+    background: rgb(20, 71, 30);
+}
+.promo__title-line.mid{
+    padding: 9px 9px 9px 25px;
+    border-radius: 5px;
+    max-width: 205px;
+    color: var(--newColor1);
 
-.promo__title-line1 {
-    position: relative;
-    display: inline-block;
 }
-.promo__title-line1 span {
-    position: relative;
-    /*z-index: 1;*/
-}
-.promo__title-line1::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -3px;
-    bottom: -3px;
-    left: -20px;
-    right: -20px;
-    background-color: var(--newColor2);
-    opacity: 0.4;
+.promo__title-line.down{
+    padding: 9px 9px 9px 25px;
+    border-radius: 5px;
+    max-width: 205px;
 }
 
 .promo__desc {
     margin-bottom: 32px;
+    padding: 9px 9px 9px 25px;
     font-weight: 900;
     font-size: 45px;
     letter-spacing: 0.1em;
     color: var(--newColor3);
     text-transform: uppercase;
-}
-
-.promo__desc-cont {
-    position: relative;
-    display: inline-block;
-}
-.promo__desc-cont span{
-     position: relative;
-}
-
-.promo__desc-cont::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -3px;
-    bottom: -3px;
-    left: -20px;
-    right: -20px;
-    background-color: var(--textColor);
+    background: var(--textColor);
 }
 
 .promo__btn-wrapper {
@@ -92,11 +73,11 @@
 .promo__btn {
     padding: 18px 40px;
     border-radius: 10px;
-    font-weight: 900;
-    font-size: 30px;
-    line-height: 1.5;
+    letter-spacing: 5px;
+    font-size: 50px;
     background: var(--textColor);
     color: var(--newColor3);
     text-transform: uppercase;
+    font-family: Twinses Black;
 
 }

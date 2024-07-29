@@ -21,9 +21,9 @@
 }
 .solds__textEnd {
     text-align: center;
-    color: var(--newColor4);
-    font-size: 20px;
-
+    font-size: 35px;
+    font-family: MoscowMetroColor;
+    margin-bottom: 20px;
 }
 .countdown__timer {
     display: flex;
@@ -37,6 +37,7 @@
     margin-right: 20px;
     color: var(--newColor4);
     font-size: 25px;
+    font-family: MoscowMetro;
 }
 .timerBet {
     margin-right: 18px;
