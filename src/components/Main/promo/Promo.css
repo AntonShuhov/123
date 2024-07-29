@@ -34,11 +34,10 @@
     background: rgb(20, 71, 30);
 }
 .promo__title-line.mid{
-    padding: 9px 9px 9px 25px;
+    padding: 16px 9px 9px 25px;
     border-radius: 5px;
     max-width: 205px;
-    color: var(--newColor1);
-
+    color: var(--newColor5);
 }
 .promo__title-line.down{
     padding: 9px 9px 9px 25px;
@@ -49,6 +48,7 @@
 .promo__desc {
     margin-bottom: 32px;
     padding: 9px 9px 9px 25px;
+    border-radius: 8px;
     font-weight: 900;
     font-size: 45px;
     letter-spacing: 0.1em;
