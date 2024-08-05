@@ -1,11 +1,15 @@
 import {makeAutoObservable} from "mobx";
+import axios from "../utils/axios";
 
 export default class Store {
     user = {
         email : '',
-        password : '',
+        name : '',
+        token: '',
     };
     isAuth = false;
+    isLoading = false;
+    status = '';
 
     constructor() {
         makeAutoObservable(this);
@@ -15,9 +19,28 @@ export default class Store {
         this.isAuth = bool;
     }
 
-    setUser(email, password) {
+    setStatus(message) {
+        this.status = message;
+    }
+    setUser(email, password, token) {
         this.user.email = email;
         this.user.password = password;
+        this.user.token = token;
+    }
+
+    async userRegistration({email, password}) {
+        try {
+            const { data } = await axios.post('/auth/register', {
+                email,
+                password,
+            });
+            if(data.token) {
+                window.localStorage.setItem('token', data.token)
+            }
+            return data;
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     async login(email, password) {

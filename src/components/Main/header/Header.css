@@ -67,8 +67,18 @@
 }
 .header__nav-btn-catalog {
     color: var(--newColor1);
+
+}
+.header__nav-btn-catalog-wrapper {
+    position: relative;
+}
+.header__nav-btn-catalog-wrapper:hover .header__nav-catalog {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 .header__nav-catalog {
+    left: -70px;
     z-index: 10;
     margin-top: 10px;
     position: absolute;
@@ -84,23 +94,19 @@
     visibility: hidden;
     transition: 0.3s;
 }
-.header__nav-catalog.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
+
 .header__nav-catalog::before{
     display: block;
     content: "";
     position: absolute;
     width: 0;
     height: 0;
-    top: -20px;
+    top: -17px;
     border: 0 solid transparent;
-    right: 80px;
-    border-right-width: 20px;
-    border-left-width: 20px;
-    border-bottom: 20px solid var(--textColor);
+    right: 155px;
+    border-right-width: 15px;
+    border-left-width: 15px;
+    border-bottom: 15px solid var(--textColor);
 }
 .header__nav-item-icon {
     margin-right: 7px;
@@ -142,30 +148,39 @@
 }
 .modal__login-login {
     background-color: var(--newColor2);
-    width: 300px;
+    width: 350px;
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 15px;
 }
 .modal__login-password {
     background-color: var(--newColor2);
-    width: 300px;
+    width: 350px;
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 15px;
 }
 .modal__login-submit {
     background-color: var(--newColor3);
-    width: 130px;
+    width: 175px;
     padding: 8px;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-right: 15px;
+}
+.modal__login-switch {
+    background-color: var(--newColor3);
+    width: 160px;
+    padding: 8px;
+    border-radius: 5px;
 }
 .modal__login-registration {
     background-color: var(--newColor3);
     width: 130px;
     padding: 8px;
     border-radius: 5px;
+}
+.modal__login-submit-wrapper {
+    display: flex;
 }
 .header__nav-usermenu {
     z-index: 10;
