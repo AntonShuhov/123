@@ -1,6 +1,7 @@
 import React, {createContext, useEffect, useContext} from 'react';
 import{ Routes, Route } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
+import { ToastContainer } from "react-toastify";
 
 import Store from "./store/user-store";
 
@@ -22,12 +23,6 @@ export const Context = createContext( {
 function App() {
     const {store} = useContext(Context);
 
-    useEffect(() => {
-        if(localStorage.getItem('token')) {
-            console.log(localStorage.getItem('user'))
-        }
-    }, [])
-
   return (
       <>
           <Context.Provider value={{store }}>
@@ -41,8 +36,10 @@ function App() {
                 <Route path='/products' element={<Products/>}/>
                 <Route path=':id' element={<Product/>}/>
 
-                  <Route path='*' element={<NotFoundPage/>}/>
+                <Route path='*' element={<NotFoundPage/>}/>
               </Routes>
+
+              {/*<ToastContainer />*/}
           </Context.Provider>
       </>
   );

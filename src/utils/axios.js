@@ -1,13 +1,20 @@
 import axios from "axios";
 
-const instanse = axios.create({
+export const API_URL = `http://localhost:5000/api`;
+
+const $api = axios.create({
     withCredentials: true,
-    baseURL: 'https://localhost:5000/api',
+    baseURL: API_URL,
 });
 
-instanse.interceptors.request.use((config) => {
+$api.interceptors.request.use((config) => {
     config.headers.Authorization = window.localStorage.getItem('token');
     return config;
 })
 
-export default instanse;
+// $api.interceptors.request.use(request => {
+//     console.log('Запрос:', request);
+//     return request;
+// });
+
+export default $api;

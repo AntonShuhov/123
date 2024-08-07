@@ -1,8 +1,10 @@
 import './Header.css';
-import {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Context} from "../../../App";
 import {observer} from "mobx-react-lite";
 import { Link } from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import logoImg from './../../../img/icons/logo.png';
 import {
@@ -29,6 +31,13 @@ function Header() {
     const [name, setName] = useState("");
 
     const {store} = useContext(Context);
+
+    const status = store.status;
+    useEffect(() => {
+        if (store.status) {
+            toast(status);
+        }
+    }, [status]);
 
     return (
         <header className="header">
@@ -94,15 +103,15 @@ function Header() {
                                 <button onClick={() => {
                                     setUserMenuOpen(!userMenuOpen);
                                 }}> {
-                                    localStorage.getItem('user') ? <div>
-                                                    <FaUserAstronaut/> <span className="header__nav-userEmail" >{localStorage.getItem('user') ? `${localStorage.user}` : ''}</span>
+                                    localStorage.getItem('name') ? <div>
+                                                    <FaUserAstronaut/> <span className="header__nav-userEmail" >{localStorage.getItem('name') ? `${localStorage.name}` : ''}</span>
                                                    </div> :
                                         <FaArrowTurnUp className="header__nav-userEmailEnter"/>
                                     }
 
                                 </button>
                             </li>
-                            <li><button className={`header__nav-btn ${store.isAuth ? "passive" : ""}`} onClick={() => setModalActive(true)}>
+                            <li><button className={`header__nav-btn ${localStorage.getItem('name') ? "passive" : ""}`} onClick={() => setModalActive(true)}>
                                 Войти
                             </button></li>
                         </ul>
@@ -111,7 +120,7 @@ function Header() {
             </div>
             <ul className={`header__nav-usermenu ${userMenuOpen ? "active" : ""}`}>
                 {
-                    localStorage.getItem('user') ? <><li className="header__nav-usermenu-item" onClick={() => {
+                    localStorage.getItem('name') ? <><li className="header__nav-usermenu-item" onClick={() => {
                         store.logout();
                         setUserMenuOpen(false); }}
 
@@ -120,6 +129,8 @@ function Header() {
                 }
 
             </ul>
+            <ToastContainer autoClose={2000}/>
+
             <Modal active={modalActive} setActive={setModalActive}>
                 {
                     !modalAuthorizationType ?
@@ -148,16 +159,22 @@ function Header() {
                                     className="modal__login-submit"
                                     type="submit"
                                     onClick={() => {
-                                        store.login(email, password);
-                                        setModalActive(false)}}
+                                        store.userLogin(email, password);
+                                        setModalActive(false);
+                                        setModalActive(false);
+                                        setEmail('');
+                                        setName('');
+                                        setPassword('');
+                                        // console.log(store.user);
+                                    }}
                                 >
-                                    Зарегистрироваться
+                                    Войти
                                 </button>
                                 <button
                                     className="modal__login-switch"
                                     onClick={() => { setModalAuthorizationType(true) }}
                                 >
-                                    Нету аккаунта?
+                                    Регистрация
                                 </button>
                             </div>
 
@@ -198,10 +215,15 @@ function Header() {
                                     className="modal__login-submit"
                                     type="submit"
                                     onClick={() => {
-                                        store.login(email, password);
-                                        setModalActive(false)}}
+                                        store.userRegistration(email, name, password);
+                                        setModalActive(false);
+                                        setModalActive(false);
+                                        setEmail('');
+                                        setName('');
+                                        setPassword('');
+                                    }}
                                 >
-                                    Войти
+                                    Зарегистрироваться
                                 </button>
                                 <button
                                     className="modal__login-switch"

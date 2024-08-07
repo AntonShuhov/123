@@ -18,6 +18,9 @@ body {
     margin: 0 auto;
     padding: 0 30px;
 }
+.main__toast-wrapper {
+
+}
 
 @font-face {
      font-family: Twinses Black;
