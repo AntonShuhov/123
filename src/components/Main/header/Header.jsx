@@ -30,14 +30,16 @@ function Header() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
 
-    const {store} = useContext(Context);
+    const {userStore} = useContext(Context);
 
-    const status = store.status;
-    useEffect(() => {
-        if (store.status) {
-            toast(status);
-        }
-    }, [status]);
+    const status = userStore.status;
+
+
+    // useEffect(() => {
+    //     if (store.status) {
+    //         toast(status);
+    //     }
+    // }, [status]);
 
     return (
         <header className="header">
@@ -99,7 +101,7 @@ function Header() {
 
                             <li><Link to="/about" className="header__nav-link">Про нас</Link></li>
                             <li><Link to="/solds" className="header__nav-link">Акции</Link></li>
-                            <li  className={`header__nav-user ${store.isAuth ? "userActive" : ""}`} >
+                            <li  className={`header__nav-user ${userStore.isAuth ? "userActive" : ""}`} >
                                 <button onClick={() => {
                                     setUserMenuOpen(!userMenuOpen);
                                 }}> {
@@ -120,12 +122,12 @@ function Header() {
             </div>
             <ul className={`header__nav-usermenu ${userMenuOpen ? "active" : ""}`}>
                 {
-                    localStorage.getItem('name') ? <><li className="header__nav-usermenu-item" onClick={() => {
-                        store.logout();
-                        setUserMenuOpen(false); }}
-
-                    >Выйти</li>
-                        <li className="header__nav-usermenu-item">Личный кабинет</li></> : <li>Войдите или зарегистрируйтесь в личном кабинете</li>
+                    localStorage.getItem('name') ?
+                        <> <li className="header__nav-usermenu-item"> <Link to='/' className="header__nav-usermenu-item-link" onClick={() => { userStore.logout(); setUserMenuOpen(false); }}>Выйти</Link> </li>
+                        <li><Link to="/myProfile" className="header__nav-usermenu-item-link">Личный кабинет </Link> </li>
+                        </>
+                        :
+                        <li>Войдите или зарегистрируйтесь в личном кабинете</li>
                 }
 
             </ul>
@@ -159,7 +161,7 @@ function Header() {
                                     className="modal__login-submit"
                                     type="submit"
                                     onClick={() => {
-                                        store.userLogin(email, password);
+                                        userStore.userLogin(email, password);
                                         setModalActive(false);
                                         setModalActive(false);
                                         setEmail('');
@@ -215,7 +217,7 @@ function Header() {
                                     className="modal__login-submit"
                                     type="submit"
                                     onClick={() => {
-                                        store.userRegistration(email, name, password);
+                                        userStore.userRegistration(email, name, password);
                                         setModalActive(false);
                                         setModalActive(false);
                                         setEmail('');

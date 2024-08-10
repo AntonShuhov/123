@@ -1,9 +1,8 @@
 import React, {createContext, useEffect, useContext} from 'react';
 import{ Routes, Route } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
-import { ToastContainer } from "react-toastify";
 
-import Store from "./store/user-store";
+import UserStore from "./store/user-store";
 
 import Main from "./components/Main/Main";
 import About from "./components/About/About";
@@ -13,19 +12,24 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import AdminPanel from "./components/Admin/AdminPanel";
 import Products from "./components/Products/Proudcts";
 import Product from "./components/Product/Product";
+import MyProfile from "./components/MyProfile/MyProfile";
 
-const store = new Store();
+const userStore = new UserStore();
 
 export const Context = createContext( {
-    store,
+    userStore,
 })
 
 function App() {
     const {store} = useContext(Context);
 
+    useEffect(() => {
+        userStore.userMyProfile();
+    }, []);
+
   return (
       <>
-          <Context.Provider value={{store }}>
+          <Context.Provider value={{userStore }}>
               <div className="App">   </div>
               <Routes>
                 <Route path='/' element={<Main/>}/>
@@ -35,6 +39,7 @@ function App() {
                 <Route path='/adminPanel' element={<AdminPanel/>}/>
                 <Route path='/products' element={<Products/>}/>
                 <Route path=':id' element={<Product/>}/>
+                <Route path='/myProfile' element={<MyProfile/>}/>
 
                 <Route path='*' element={<NotFoundPage/>}/>
               </Routes>

@@ -56,7 +56,7 @@
 
 .header__nav-userEmail {
     color: var(--newColor1);
-    font-size: 15px;
+    font-size: 18px;
 }
 .header__nav-userEmailEnter {
     transform: rotate(90deg);
@@ -187,8 +187,8 @@
     margin-top: 10px;
     position: absolute;
     right: 150px;
-    width: 220px;
-    padding: 20px;
+    width: 180px;
+    padding: 15px;
     border-radius: 8px;
     background-color: var(--newColor1);
     color: var(--newColor2);
@@ -205,5 +205,8 @@
     visibility: visible;
 }
 .header__nav-usermenu-item {
-    cursor: pointer;
+    margin-bottom: 5px;
+}
+.header__nav-usermenu-item-link {
+    color: var(--newColor2);
 }

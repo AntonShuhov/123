@@ -1,0 +1,35 @@
+.myProfile-wrapper {
+    background-color: var(--newColor2);
+    padding: 20px;
+    border-radius: 15px;
+}
+.myProfile__text-title {
+    color: var(--newColor4);
+    font-family: MoscowMetro;
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+.myProfile__text-title-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: var(--textColor);
+}
+.myProfile__text-item {
+    margin-bottom: 15px;
+    color: var(--textColor);
+    font-size: 16px;
+}
+.myProfile__text-item-in {
+    color: var(--textColor);
+    font-size: 16px;
+    font-weight: bold;
+}
+.myProfile__history-title {
+    padding: 20px 20px 80px 20px;
+    margin-top: 25px;
+    border-radius: 15px;
+    font-family: MoscowMetroColor;
+    font-size: 24px;
+    margin-bottom: 50px;
+    background-color: var(--newColor1);
+}

@@ -8,6 +8,7 @@ import './Slider.css';
 import SalesImg1 from "../../../../img/sales/Motorola_Razr_40_1.png";
 import SalesImg2 from "../../../../img/sales/Motorola_Razr_40_2.png";
 import SalesImg3 from "../../../../img/sales/Xiaomi_14_Ultra.png";
+import SalesImg4 from "../../../../img/sales/SamsungFlip6.png";
 
 
 function SimpleSlider() {
@@ -68,6 +69,18 @@ function SimpleSlider() {
                         <p className='sales__text__desc'>Оперативная память: 8 Gb</p>
                         <p className='sales__text__desc'>Постоянная память: 256 Gb</p>
                         <p className='sales__text__desc'>Процессор: Snapdragon 7 Gen 1</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div className='sales__list'>
+                    <img className='sales__img'  src={SalesImg4} alt='img'/>
+                    <div className='sales__text__container'>
+                        <p className='sales__text__name'>Samsung Flip 6</p>
+                        <p className='sales__text__desc'>Операционная система: Android 14</p>
+                        <p className='sales__text__desc'>Оперативная память: 12 Gb</p>
+                        <p className='sales__text__desc'>Постоянная память: 256 Gb</p>
+                        <p className='sales__text__desc'>Процессор: Snapdragon 8 Gen 3</p>
                     </div>
                 </div>
             </div>
